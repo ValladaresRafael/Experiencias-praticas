@@ -1,0 +1,44 @@
+.cards .card.card--no-media .card-footer a[href*="#mentorias"],
+.projects-grid .card.card--no-media .card-footer a[href*="#mentorias"]{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.7rem 1rem !important;
+  background:linear-gradient(180deg,var(--brand),color-mix(in oklab,var(--brand),#000 20%)) !important;
+  color:transparent !important;
+  border:0 !important;
+  border-radius:999px !important;
+  clip-path:none !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.28) !important;
+  line-height:1;
+  text-decoration:none !important;
+}
+
+.cards .card.card--no-media .card-footer a[href*="#mentorias"]::after,
+.projects-grid .card.card--no-media .card-footer a[href*="#mentorias"]::after{
+  content:"Detalhes";
+  position:absolute; inset:0;
+  display:grid; place-items:center;
+  color:#fff;
+  border-radius:inherit;
+  pointer-events:none;
+}
+
+.cards .card.card--no-media .card-footer a[href*="#mentorias"]:hover,
+.projects-grid .card.card--no-media .card-footer a[href*="#mentorias"]:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 24px rgba(0,0,0,.32);
+}
+
+.cards .card.card--no-media .card-footer a[href*="#mentorias"]:hover::after{
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-decoration-color:#fff;
+}
+
+.cards .card.card--no-media .card-footer a[href*="#mentorias"]:active,
+.projects-grid .card.card--no-media .card-footer a[href*="#mentorias"]:active{
+  transform:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.28);
+}

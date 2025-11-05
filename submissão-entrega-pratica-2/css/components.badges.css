@@ -1,0 +1,7 @@
+.badge,.tag{display:inline-block;padding:.25rem .55rem;border-radius:999px;border:1px solid transparent;background:color-mix(in oklab,var(--brand,#5b8cff) 18%,transparent);color:var(--text-1,#e6edf6);font-weight:600;line-height:1;font-size:.75rem}
+.tag{background:transparent;border-color:color-mix(in oklab,var(--text-1,#e6edf6),transparent 70%)}
+.tone-success{background:color-mix(in oklab,var(--success,#22c55e) 18%,transparent);border-color:color-mix(in oklab,var(--success,#22c55e),#000 35%)}
+.tone-warning{background:color-mix(in oklab,var(--warning,#f59e0b) 18%,transparent);border-color:color-mix(in oklab,var(--warning,#f59e0b),#000 35%)}
+.tone-danger{background:color-mix(in oklab,var(--danger,#ef4444) 18%,transparent);border-color:color-mix(in oklab,var(--danger,#ef4444),#000 35%)}
+.tone-info{background:color-mix(in oklab,var(--info,#38bdf8) 18%,transparent);border-color:color-mix(in oklab,var(--info,#38bdf8),#000 35%)}
+.tone-neutral{background:color-mix(in oklab,var(--neutral-600,#334155) 18%,transparent);border-color:color-mix(in oklab,var(--neutral-600,#334155),#000 35%)}

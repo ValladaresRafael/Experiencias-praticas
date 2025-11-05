@@ -1,0 +1,18 @@
+.alert{padding:.75rem 1rem;border-radius:var(--radius-lg,.75rem);border:1px solid transparent;background:var(--surface-1,#0f1424);color:var(--text-1,#e6edf6)}
+.alert.tone-success{border-color:color-mix(in oklab,var(--success,#22c55e),#000 35%);background:color-mix(in oklab,var(--success,#22c55e) 12%,var(--surface-1,#0f1424))}
+.alert.tone-warning{border-color:color-mix(in oklab,var(--warning,#f59e0b),#000 35%);background:color-mix(in oklab,var(--warning,#f59e0b) 12%,var(--surface-1,#0f1424))}
+.alert.tone-danger{border-color:color-mix(in oklab,var(--danger,#ef4444),#000 35%);background:color-mix(in oklab,var(--danger,#ef4444) 12%,var(--surface-1,#0f1424))}
+.alert + .alert{margin-top:.75rem}
+.toast{position:fixed;inset:auto 1rem 1rem auto;z-index:60;min-width:min(92vw,360px);padding:.7rem .9rem;border-radius:var(--radius-lg,.75rem);border:1px solid color-mix(in oklab,var(--surface-1,#0f1424),#000 35%);background:var(--surface-2,#111a2f);color:var(--text-1,#e6edf6);box-shadow:0 8px 24px rgba(0,0,0,.35);transform:translateY(12px);opacity:0;pointer-events:none}
+.toast:target{transform:translateY(0);opacity:1;pointer-events:auto}
+.toast.tone-success{border-color:color-mix(in oklab,var(--success,#22c55e),#000 35%)}
+.toast.tone-warning{border-color:color-mix(in oklab,var(--warning,#f59e0b),#000 35%)}
+.toast.tone-danger{border-color:color-mix(in oklab,var(--danger,#ef4444),#000 35%)}
+.toast-close{display:inline-block;margin-top:.5rem}
+.modal{position:fixed;inset:0;z-index:70;display:none;place-items:center}
+.modal:target{display:grid}
+.modal::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(2px)}
+.modal-card{position:relative;background:var(--surface-1,#0f1424);border:1px solid color-mix(in oklab,var(--surface-1,#0f1424),#000 40%);border-radius:var(--radius-2xl,1.25rem);min-width:min(92vw,560px);max-width:92vw;box-shadow:0 8px 24px rgba(0,0,0,.4);display:grid;gap:1rem}
+.modal-card>header,.modal-card>footer{padding:1rem 1.25rem;border-bottom:1px solid color-mix(in oklab,var(--surface-1,#0f1424),#000 35%)}
+.modal-card>footer{border-bottom:0;border-top:1px solid color-mix(in oklab,var(--surface-1,#0f1424),#000 35%);display:flex;justify-content:flex-end;gap:.5rem}
+.modal-card>p{padding:0 1.25rem 1rem}

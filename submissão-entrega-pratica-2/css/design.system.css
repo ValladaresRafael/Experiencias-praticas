@@ -1,0 +1,119 @@
+:root{
+  color-scheme:dark;
+  --brand:#5b8cff;--primary:var(--brand);--secondary:#22d3ee;--accent:#a78bfa;
+  --info:#38bdf8;--success:#22c55e;--warning:#f59e0b;--danger:#ef4444;
+  --neutral-50:#081122;--neutral-100:#0b152a;--neutral-200:#0f1a31;--neutral-300:#13203a;
+  --neutral-400:#1a2a49;--neutral-500:#22345a;--neutral-600:#2f4573;--neutral-700:#4a6292;
+  --surface-1:var(--neutral-100);--surface-2:var(--neutral-200);--surface-3:var(--neutral-300);
+  --text-1:#ffffff;--text-2:#b6c2d9;--text-3:#7e8aa8;--link:var(--primary);
+  --font-sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --fs-1:clamp(.95rem,.9rem + .2vw,1.05rem);
+  --fs-2:clamp(1.0625rem,1rem + .35vw,1.2rem);
+  --fs-3:clamp(1.25rem,1.05rem + .8vw,1.5rem);
+  --fs-4:clamp(1.5rem,1.2rem + 1.2vw,2rem);
+  --fs-5:clamp(2rem,1.6rem + 1.8vw,2.75rem);
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2rem;--space-5:3rem;--space-6:4rem;
+  --radius-sm:.375rem;--radius-md:.625rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-2xl:1.25rem;--radius-3xl:1.75rem;--radius-full:999px;
+  --shadow-1:0 4px 12px rgba(0,0,0,.25);--shadow-2:0 8px 24px rgba(0,0,0,.28);--shadow-3:0 12px 32px rgba(0,0,0,.35);
+  --bg-base:#0a1428;--bin-a:#5b8cff;--bin-b:#38bdf8
+}
+
+html{min-height:100%}
+html,body{overflow-x:hidden}
+body{background:var(--bg-base);color:var(--text-1);font-family:var(--font-sans);position:relative;z-index:0}
+
+h1{font-size:var(--fs-5);font-weight:800;letter-spacing:.2px}
+h2{font-size:var(--fs-4);font-weight:800}
+h3{font-size:var(--fs-3);font-weight:700}
+p,li{font-size:var(--fs-1);line-height:1.7;color:var(--text-2)}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.btn{display:inline-block;padding:.7rem 1rem;border-radius:var(--radius-md);font-weight:700}
+.btn--primary{background:linear-gradient(180deg,var(--primary),color-mix(in oklab,var(--primary),#000 20%));color:#fff}
+.btn--ghost{border:1px solid color-mix(in oklab,var(--primary),#000 40%);color:var(--primary);background:transparent}
+
+.badge,.tag{display:inline-block;padding:.25rem .5rem;border-radius:var(--radius-full);font-size:.85em}
+.badge{background:color-mix(in oklab,var(--primary),#000 65%);color:#e7efff}
+.tag.tone-info{background:color-mix(in oklab,var(--info),#000 70%);color:#dff4ff}
+.tag.tone-success{background:color-mix(in oklab,var(--success),#000 70%);color:#e8ffef}
+.tag.tone-neutral{background:color-mix(in oklab,var(--neutral-600),#000 45%);color:#eef2ff}
+
+html::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.40;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='256' viewBox='0 0 64 256'><rect width='100%25' height='100%25' fill='none'/><g fill='%232a57ff' font-family='monospace' font-size='18' opacity='0.22'><text x='24' y='20'>0</text><text x='24' y='44'>1</text><text x='24' y='68'>0</text><text x='24' y='92'>1</text><text x='24' y='116'>0</text><text x='24' y='140'>1</text><text x='24' y='164'>0</text><text x='24' y='188'>1</text><text x='24' y='212'>0</text><text x='24' y='236'>1</text></g></svg>");
+  background-size:64px 256px;background-repeat:repeat;background-position:0 0;
+  filter:drop-shadow(0 0 10px rgba(91,140,255,.55));
+  animation:bitsDownSlow 68s linear infinite
+}
+
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='256' viewBox='0 0 64 256'><rect width='100%25' height='100%25' fill='none'/><g fill='%235b8cff' font-family='monospace' font-size='18' opacity='0.75'><text x='24' y='16'>1</text><text x='24' y='40'>0</text><text x='24' y='64'>1</text><text x='24' y='88'>0</text><text x='24' y='112'>1</text><text x='24' y='136'>0</text><text x='24' y='160'>1</text><text x='24' y='184'>0</text><text x='24' y='208'>1</text><text x='24' y='232'>0</text></g></svg>");
+  background-size:64px 256px;background-repeat:repeat;background-position:32px 0;
+  filter:drop-shadow(0 0 14px rgba(91,140,255,.8));
+  animation:bitsDownFast 52s linear infinite
+}
+
+@keyframes bitsDownSlow{to{background-position:0 1000%}}
+@keyframes bitsDownFast{to{background-position:32px 1000%}}
+
+.surface-1{background:var(--surface-1);box-shadow:var(--shadow-1);border:1px solid color-mix(in oklab,var(--surface-1),#000 35%);border-radius:var(--radius-2xl)}
+.surface-2{background:var(--surface-2);box-shadow:var(--shadow-2);border:1px solid color-mix(in oklab,var(--surface-2),#000 35%);border-radius:var(--radius-2xl)}
+.surface-3{background:var(--surface-3);box-shadow:var(--shadow-3);border:1px solid color-mix(in oklab,var(--surface-3),#000 35%);border-radius:var(--radius-2xl)}
+
+section[aria-labelledby="titulo-cadastro"] form,
+section[aria-labelledby="titulo-cadastro"] fieldset,
+section[aria-labelledby="titulo-cadastro"] input,
+section[aria-labelledby="titulo-cadastro"] select,
+section[aria-labelledby="titulo-cadastro"] textarea{
+  box-sizing:border-box;
+  max-width:100%
+}
+
+
+.cards .card-footer a.btn.btn--ghost[href*="#mentorias"],
+.projects-grid .card-footer a.btn.btn--ghost[href*="#mentorias"]{
+  position:relative;
+  display:inline-block!important;
+  padding:.7rem 1rem!important;
+  background:linear-gradient(180deg,var(--primary),color-mix(in oklab,var(--primary),#000 20%))!important;
+  color:transparent!important;
+  border:0!important;
+  box-shadow:0 6px 18px rgba(0,0,0,.28)!important;
+  border-radius:var(--radius-md)!important;
+  font-weight:700!important;
+  overflow:hidden;
+  text-decoration:none!important;
+  transition:transform .15s,box-shadow .15s,text-decoration-color .15s
+}
+.cards .card-footer a.btn.btn--ghost[href*="#mentorias"]::after,
+.projects-grid .card-footer a.btn.btn--ghost[href*="#mentorias"]::after{
+  content:"Detalhes";
+  position:absolute;inset:0;
+  display:grid;place-items:center;
+  color:#fff
+}
+.cards .card-footer a.btn.btn--ghost[href*="#mentorias"]:hover,
+.projects-grid .card-footer a.btn.btn--ghost[href*="#mentorias"]:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 24px rgba(0,0,0,.32)
+}
+.cards .card-footer a.btn.btn--ghost[href*="#mentorias"]:hover::after,
+.projects-grid .card-footer a.btn.btn--ghost[href*="#mentorias"]:hover::after{
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-decoration-color:#fff
+}
+.cards .card-footer a.btn.btn--ghost[href*="#mentorias"]:active,
+.projects-grid .card-footer a.btn.btn--ghost[href*="#mentorias"]:active{
+  transform:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.28)
+}
+.cards .card-footer a.btn.btn--ghost[href*="#mentorias"]:active::after,
+.projects-grid .card-footer a.btn.btn--ghost[href*="#mentorias"]:active::after{
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-decoration-color:#fff
+}

@@ -1,0 +1,43 @@
+header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,var(--surface-2,#111a2f),transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid color-mix(in oklab,var(--surface-2,#111a2f),#000 20%)}
+header .brandbar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.8rem clamp(.75rem,2vw,1.25rem)}
+header .logo{display:flex;align-items:center;gap:.6rem;font-weight:800;color:var(--text-1,#e6edf6);text-decoration:none}
+header .logo img{width:40px;height:40px;display:block}
+
+nav[aria-label]{position:relative}
+nav[aria-label] .nav-toggle{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border-radius:999px;border:1px solid color-mix(in oklab,var(--surface-2,#111a2f),#000 40%);background:var(--surface-2,#111a2f);color:var(--text-1,#e6edf6);box-shadow:0 1px 2px rgba(0,0,0,.4),0 2px 6px rgba(0,0,0,.3)}
+nav[aria-label] .nav-toggle:focus-visible{outline:2px solid var(--ring,#00c2a8);outline-offset:2px}
+nav[aria-label] .nav-scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45)}
+
+nav[aria-label] > ul{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:.25rem}
+nav[aria-label] > ul > li{position:relative}
+nav[aria-label] a,
+nav[aria-label] .submenu-toggle{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:999px;border:1px solid transparent;background:transparent;color:var(--text-1,#e6edf6);text-decoration:none;line-height:1}
+nav[aria-label] a:hover,
+nav[aria-label] .submenu-toggle:hover{background:color-mix(in oklab,var(--brand,#5b8cff) 18%,transparent)}
+nav[aria-label] a[aria-current]{background:var(--brand-700,#2956d6);color:#fff}
+nav[aria-label] .chev{width:14px;height:14px}
+
+nav[aria-label] .submenu{position:absolute;z-index:30;min-width:220px;display:none;margin-top:.35rem;padding:.35rem;border-radius:var(--radius-xl,1rem);background:var(--surface-2,#111a2f);border:1px solid color-mix(in oklab,var(--surface-2,#111a2f),#000 40%);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+nav[aria-label] .submenu li{list-style:none}
+nav[aria-label] .submenu a{display:block;padding:.6rem .8rem;border-radius:var(--radius-lg,.75rem);text-decoration:none;color:var(--text-1,#e6edf6)}
+nav[aria-label] .submenu a:hover{background:color-mix(in oklab,var(--brand,#5b8cff) 18%,transparent)}
+
+@media (min-width:768px){
+  nav[aria-label] .nav-toggle{display:none}
+  nav[aria-label] .has-submenu:hover>.submenu,
+  nav[aria-label] .has-submenu:focus-within>.submenu{display:block}
+}
+
+@media (max-width:767px){
+  header .brandbar{padding:.75rem .9rem}
+  nav[aria-label] > ul{position:fixed;z-index:40;inset:0 0 0 25%;display:flex;flex-direction:column;align-items:stretch;gap:.35rem;padding:clamp(1rem,4vw,1.5rem);background:color-mix(in oklab,var(--neutral-900,#0f172a),#000 10%);backdrop-filter:blur(6px);transform:translateX(110%);transition:transform .18s ease}
+  nav[aria-label][data-open="true"] > ul{transform:translateX(0)}
+  nav[aria-label][data-open="true"] .nav-scrim{display:block}
+  nav[aria-label] > ul > li > a,
+  nav[aria-label] .submenu-toggle{width:100%;justify-content:space-between;border:1px solid color-mix(in oklab,var(--surface-1,#0f1424),#000 35%);background:var(--surface-1,#0f1424)}
+  nav[aria-label] .submenu{position:static;display:none;margin:0;padding:.25rem 0 .5rem;background:transparent;border:0;box-shadow:none}
+  nav[aria-label] .submenu-toggle[aria-expanded="true"] + .submenu{display:block}
+}
+
+.skip-link{position:absolute;inset-inline-start:1rem;inset-block-start:-40px;padding:.5rem .75rem;border-radius:999px;background:var(--brand-700,#2956d6);color:#fff;transition:transform .2s ease}
+.skip-link:focus{transform:translateY(60px)}
